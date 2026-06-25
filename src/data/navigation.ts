@@ -4,7 +4,7 @@ export const navigationData = {
             label: "Inicio", href:"#"
         },
         {
-            label: "Colchones", href:"#"
+            label: "Beneficios", href:"beneficios"
         },
         {
             label: "Categorias", href:"#"

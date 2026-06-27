@@ -1,5 +1,6 @@
 import { heroData } from "@/data/hero";
 import { Reveal } from "@/components/animations/Reveal";
+import { Navbar } from '../layout/Navbar';
 
 export function HeroSection() {
   return (
@@ -16,6 +17,7 @@ export function HeroSection() {
             object-cover
           "
         />
+        
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/45" />

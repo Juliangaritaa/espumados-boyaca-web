@@ -5,6 +5,7 @@ import { CategoriesSection } from '../components/sections/CategoriesSection';
 import { ProcessSection } from '../components/sections/ProcessSection';
 import { CTASection } from '../components/sections/CTASection';
 import { Footer } from '../components/sections/Footer';
+import { LocationSection } from '../components/sections/LocationSection';
 
 export default function Home() {
     return (
@@ -14,7 +15,7 @@ export default function Home() {
             <HeroSection />
             <BenefitsSection />
             <CategoriesSection />
-
+            <LocationSection />
             <ProcessSection />
             <CTASection />
             <Footer />

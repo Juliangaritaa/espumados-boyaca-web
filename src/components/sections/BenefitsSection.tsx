@@ -1,6 +1,7 @@
 import { benefitsData } from "@/data/benefits";
 import { Reveal } from "@/components/animations/Reveal";
 import { BenefitCard } from "@/components/cards/BenefitCard";
+import logo from "@/assets/espumados-boyaca-web-logo.svg";
 
 export function BenefitsSection() {
   return (
@@ -67,7 +68,6 @@ export function BenefitsSection() {
             </Reveal>
           ))}
         </div>
-
       </div>
     </section>
   );

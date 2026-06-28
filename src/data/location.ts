@@ -4,7 +4,7 @@ export const locationData = {
     address: "Calle 16 #9-87 Local 103, Edificio Arista Business Center, Tunja, Boyacá",
     email: "",
     coordinates: {
-        lat: 5.531199441002908,
-        lng: -73.36238433068922,
+        lat: 5.531167,
+        lng: -73.362352,
   },
 };

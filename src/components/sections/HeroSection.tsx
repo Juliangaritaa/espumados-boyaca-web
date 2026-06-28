@@ -1,7 +1,6 @@
 import { heroData } from "@/data/hero";
 import { Reveal } from "@/components/animations/Reveal";
 import { Button } from "../ui/button";
-import { Navbar } from "@/components/layout/Navbar";
 
 export function HeroSection() {
   return (

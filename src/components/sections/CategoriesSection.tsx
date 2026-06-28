@@ -11,9 +11,8 @@ import {
 
 export function CategoriesSection() {
   return (
-    <section id="categorias" className="py-20 lg:py-28" >
+    <section id="categorias">
       <div className="mx-auto max-w-7xl px-6">
-
         <Reveal>
           <div
             className="
@@ -28,13 +27,10 @@ export function CategoriesSection() {
             "
           >
             <div>
-              <h2 className="text-4xl font-bold">
-                Nuestros Productos
-              </h2>
+              <h2 className="text-4xl font-bold">Nuestros Productos</h2>
 
               <p className="mt-2 text-muted-foreground">
-                Todo lo que necesitas para un descanso
-                cómodo y saludable.
+                Todo lo que necesitas para un descanso cómodo y saludable.
               </p>
             </div>
           </div>
@@ -47,45 +43,30 @@ export function CategoriesSection() {
             }}
             className="w-full"
           >
-            <CarouselContent>
-
+            <CarouselContent className="-ml-4 pb-4">
               {categoriesData.map((category) => (
                 <CarouselItem
                   key={category.title}
                   className="
-                    sm:basis-1/2
-                    lg:basis-1/3
-                    xl:basis-1/4
+                    pl-4
+          basis-full
+          sm:basis-1/2
+          lg:basis-1/3
+          xl:basis-1/4
                   "
                 >
-                  <CategoryCard
-                    {...category}
-                  />
+                  <CategoryCard {...category} />
                 </CarouselItem>
               ))}
-
             </CarouselContent>
 
-            <div
-              className="
-                mt-8
-                flex
-                justify-end
-                gap-3
-              "
-            >
-              <CarouselPrevious
-                className="static translate-y-0"
-              />
+            <div className="mt-8 flex justify-end gap-3 pr-1">
+              <CarouselPrevious className="static translate-y-0" />
 
-              <CarouselNext
-                className="static translate-y-0"
-              />
+              <CarouselNext className="static translate-y-0" />
             </div>
-
           </Carousel>
         </Reveal>
-
       </div>
     </section>
   );

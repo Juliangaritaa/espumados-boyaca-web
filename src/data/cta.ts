@@ -4,5 +4,12 @@ export const ctaData = {
   description:
     "Contáctanos y encuentra el colchón perfecto para tu hogar.",
 
-  buttonText: "Solicitar Información",
+  buttonText: [
+    {
+    btn1: "Solicitar Información"
+    },
+    {
+      btn2: "Escribir por Whatsapp"
+    }
+  ],
 };

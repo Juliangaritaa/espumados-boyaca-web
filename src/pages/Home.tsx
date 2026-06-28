@@ -1,4 +1,3 @@
-import { Navbar } from '../components/layout/Navbar';
 import { HeroSection } from '../components/sections/HeroSection';
 import { BenefitsSection } from '../components/sections/BenefitsSection';
 import { CategoriesSection } from '../components/sections/CategoriesSection';
@@ -10,8 +9,6 @@ import { LocationSection } from '../components/sections/LocationSection';
 export default function Home() {
     return (
         <>
-            <Navbar />
-
             <HeroSection />
             <BenefitsSection />
             <CategoriesSection />

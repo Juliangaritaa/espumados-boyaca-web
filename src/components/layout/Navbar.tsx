@@ -21,11 +21,9 @@ export function Navbar() {
           <nav className="hidden md:block">
             <ul className="flex items-center gap-8">
               {navigationData.navigation.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href} className="text-sm">
-                    {item.label}
-                  </a>
-                </li>
+                <a href={item.href} className="text-sm">
+                  {item.label}
+                </a>
               ))}
             </ul>
           </nav>

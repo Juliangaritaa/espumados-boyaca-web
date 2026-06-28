@@ -2,63 +2,105 @@ import { Phone } from "lucide-react";
 import { ctaData } from "@/data/cta";
 import { Reveal } from "@/components/animations/Reveal";
 import { Button } from "@/components/ui/button";
+import { siteData } from "@/data/site";
+import image from "@/assets/espumados-cta.png";
 
 export function CTASection() {
   return (
-    <section className="py-20">
+    <section id="cta" className="py-20">
       <div className="mx-auto max-w-7xl px-6">
-
         <Reveal>
-
           <div
             className="
+              relative
               overflow-hidden
               rounded-3xl
-              bg-primary
-              px-8
-              py-16
               text-center
-              text-primary-foreground
-
-              md:px-16
+              text-white
             "
           >
-            <h2
+            {/* Imagen de fondo */}
+            <img
+              src={image}
+              alt=""
+              aria-hidden="true"
               className="
-                text-3xl
-                font-bold
+                absolute
+                inset-0
+                h-full
+                w-full
+                object-cover
+                object-center
+              "
+            />
 
-                md:text-5xl
+            {/* Overlay oscuro */}
+            <div className="absolute inset-0 bg-black/60" />
+
+            {/* Contenido */}
+            <div
+              className="
+                relative
+                z-10
+                px-8
+                py-16
+                md:px-16
               "
             >
-              {ctaData.title}
-            </h2>
+              <h2
+                className="
+                  text-3xl
+                  font-bold
+                  md:text-5xl
+                "
+              >
+                {ctaData.title}
+              </h2>
 
-            <p
-              className="
-                mx-auto
-                mt-4
-                max-w-2xl
-                opacity-90
-              "
-            >
-              {ctaData.description}
-            </p>
+              <p
+                className="
+                  mx-auto
+                  mt-4
+                  max-w-2xl
+                  text-white/85
+                "
+              >
+                {ctaData.description}
+              </p>
 
-            <Button
-              size="lg"
-              variant="secondary"
-              className="mt-8"
-            >
-              <Phone />
+              <div
+                className="
+                  mt-8
+                  flex
+                  flex-col
+                  items-center
+                  gap-3
+                  sm:flex-row
+                  sm:justify-center
+                  sm:gap-4
+                "
+              >
+                <Button asChild size="lg" variant="secondary">
+                  <a href={`tel:${siteData.phone[0].number}`}>
+                    <Phone />
+                    {ctaData.buttonText[0].btn1}
+                  </a>
+                </Button>
 
-              {ctaData.buttonText}
-            </Button>
-
+                <Button
+                  asChild
+                  size="lg"
+                  className="border border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm"
+                >
+                  <a href={`https://wa.me/${siteData.phone[1].number}`}>
+                    <Phone />
+                    {ctaData.buttonText[1].btn2}
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
-
         </Reveal>
-
       </div>
     </section>
   );

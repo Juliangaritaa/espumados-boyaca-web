@@ -4,7 +4,7 @@ import { Card, CardContent, } from "@/components/ui/card";
 
 export function ProcessSection() {
   return (
-    <section className="py-20 lg:py-28">
+    <section id="process" className="py-20">
       <div className="mx-auto max-w-7xl px-6">
 
         <Reveal>

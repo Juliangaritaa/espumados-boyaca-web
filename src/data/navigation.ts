@@ -1,19 +1,25 @@
 export const navigationData = {
     navigation: [
         {
-            label: "Inicio", href:"#"
+            label: "Inicio", href:"#hero"
         },
         {
-            label: "Beneficios", href:"beneficios"
+            label: "Beneficios", href:"#beneficios"
         },
         {
-            label: "Categorias", href:"#"
+            label: "Categorias", href:"#categorias"
         },
         {
-            label: "Opiniones", href:"#"
+            label: "Ubicación", href:"#ubicacion"
         },
         {
-            label: "Contacto", href:"#"
-        },
-    ],
+            label: "Proceso", href:"#process"
+        },,
+        {
+            label: "CTA", href:"#cta"
+        },,
+        {
+            label: "Footer", href:"#footer"
+        }
+    ]
 };

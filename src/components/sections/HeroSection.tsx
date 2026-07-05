@@ -1,8 +1,13 @@
 import { heroData } from "@/data/hero";
 import { Reveal } from "@/components/animations/Reveal";
 import { Button } from "../ui/button";
+import type { SiteSettings } from "@/types/site.settings";
 
-export function HeroSection() {
+interface HeroProps{
+  settings: SiteSettings;
+}
+
+export function HeroSection({ settings }: HeroProps) {
   return (
     <section id="hero" className="w-full">
       <div className="relative overflow-hidden">
@@ -42,7 +47,7 @@ export function HeroSection() {
                   xl:text-8xl
                 "
               >
-                {heroData.title}
+                {settings.hero_title}
               </h1>
             </Reveal>
 
@@ -63,7 +68,7 @@ export function HeroSection() {
                   md:max-w-xl
                 "
               >
-                {heroData.subtitle}
+                {settings.hero_description}
               </p>
             </Reveal>
 

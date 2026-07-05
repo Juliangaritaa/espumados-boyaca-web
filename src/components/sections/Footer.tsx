@@ -1,6 +1,11 @@
 import { FooterData } from "@/data/footer";
+import type { SiteSettings } from "@/types/site.settings";
 
-export function Footer() {
+interface FooterProps{
+  settings: SiteSettings;
+}
+
+export function Footer({ settings }:FooterProps) {
   return (
     <footer
       id="footer"
@@ -59,13 +64,12 @@ export function Footer() {
                 text-muted-foreground
               "
             >
-              {FooterData.phones.map((phone) => (
-                <p key={phone}>{phone}</p>
-              ))}
+              <p>{settings.phone_one}</p>
+              <p>{settings.phone_two}</p>
 
               <p>{FooterData.address}</p>
 
-              <p>{FooterData.email}</p>
+              <p>{settings.email}</p>
             </div>
           </div>
         </div>

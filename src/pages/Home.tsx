@@ -5,17 +5,22 @@ import { ProcessSection } from '../components/sections/ProcessSection';
 import { CTASection } from '../components/sections/CTASection';
 import { Footer } from '../components/sections/Footer';
 import { LocationSection } from '../components/sections/LocationSection';
+import { useSettings } from "@/hooks/settings.hook";
 
 export default function Home() {
+
+    const settings = useSettings();
+    if (!settings) return null;
+
     return (
         <>
-            <HeroSection />
+            <HeroSection settings={settings} />
             <BenefitsSection />
             <CategoriesSection />
             <LocationSection />
             <ProcessSection />
-            <CTASection />
-            <Footer />
+            <CTASection settings={settings} />
+            <Footer settings={settings} />
         </>
     );
 }

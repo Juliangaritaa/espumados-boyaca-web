@@ -4,8 +4,13 @@ import { Reveal } from "@/components/animations/Reveal";
 import { Button } from "@/components/ui/button";
 import { siteData } from "@/data/site";
 import image from "@/assets/espumados-cta.png";
+import type { SiteSettings } from "@/types/site.settings";
 
-export function CTASection() {
+interface CTAProps{
+  settings: SiteSettings;
+}
+
+export function CTASection({ settings }:CTAProps ) {
   return (
     <section id="cta" className="py-20">
       <div className="mx-auto max-w-7xl px-6">
@@ -81,7 +86,7 @@ export function CTASection() {
                 "
               >
                 <Button asChild size="lg" variant="secondary">
-                  <a href={`tel:${siteData.phone[0].number}`}>
+                  <a href={`tel:${settings.phone_one}`}>
                     <Phone />
                     {ctaData.buttonText[0].btn1}
                   </a>
@@ -92,7 +97,7 @@ export function CTASection() {
                   size="lg"
                   className="border border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm"
                 >
-                  <a href={`https://wa.me/${siteData.phone[1].number}`}>
+                  <a href={`https://wa.me/${settings.phone_two}`}>
                     <Phone />
                     {ctaData.buttonText[1].btn2}
                   </a>

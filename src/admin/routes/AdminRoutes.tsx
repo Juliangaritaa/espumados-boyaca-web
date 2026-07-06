@@ -13,7 +13,7 @@ export default function AdminRoutes() {
             <Route element={<AdminLayout />} >
                 <Route index element={<Dashboard />} />
                 
-                <Route path="produts" element={<Products />} />
+                <Route path="products" element={<Products />} />
                 <Route path="settings" element={<Settings />} />
             </ Route>
         </Routes>

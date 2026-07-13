@@ -1,5 +1,7 @@
 export default function Products(){
     return (
-        <p>Productos</p>
+        <div>
+            <h1>Productos</h1>
+        </div>
     );
 }

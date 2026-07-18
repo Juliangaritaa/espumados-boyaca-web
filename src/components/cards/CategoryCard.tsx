@@ -1,18 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card";
 
 interface CategoryCardProps {
-  title: string;
+  name: string;
   description: string;
-  image: string;
+  image_url: string;
+  price: number;
+  discount: number;
   variants?: string[];
 }
 
-export function CategoryCard({
-  title,
-  description,
-  image,
-  variants,
-}: CategoryCardProps) {
+export function CategoryCard({ name, description, image_url, price, discount, variants }: CategoryCardProps) {
   return (
     <Card
       className="
@@ -29,8 +26,8 @@ export function CategoryCard({
     >
       <div className="relative h-72 overflow-hidden">
         <img
-          src={image}
-          alt={title}
+          src={image_url}
+          alt={name}
           className="
             h-full
             w-full
@@ -62,15 +59,25 @@ export function CategoryCard({
           "
         >
           <h3 className="text-2xl font-bold">
-            {title}
+            {name}
           </h3>
         </div>
       </div>
 
-      <CardContent className="space-y-4 p-6">
+      <CardContent className="space-y-4 p-3">
         <p className="text-sm text-muted-foreground">
           {description}
         </p>
+
+        <div className="flex justify-between items-center p-4">
+          <p className="text-sm text-muted-foreground">
+            {price}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            {discount}
+            %
+          </p>
+        </div>
 
         {variants && (
           <div className="flex flex-wrap gap-2">

@@ -1,15 +1,14 @@
 import { categoriesData } from "@/data/categories";
+import { useProducts } from "@/hooks/products.hook";
 import { Reveal } from "@/components/animations/Reveal";
 import { CategoryCard } from "@/components/cards/CategoryCard";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import type { Products } from "@/types/products.types";
 
 export function CategoriesSection() {
+  
+  const { products, reload, loading } = useProducts();
+
   return (
     <section id="categorias">
       <div className="mx-auto max-w-7xl px-6">
@@ -44,18 +43,16 @@ export function CategoriesSection() {
             className="w-full"
           >
             <CarouselContent className="-ml-4 pb-4">
-              {categoriesData.map((category) => (
+              {products.map((product) => (
                 <CarouselItem
-                  key={category.title}
-                  className="
-                    pl-4
-          basis-full
-          sm:basis-1/2
-          lg:basis-1/3
-          xl:basis-1/4
-                  "
+                  key={product.title}
+                  className=" pl-4
+                    basis-full
+                    sm:basis-1/2
+                    lg:basis-1/3
+                    xl:basis-1/4"
                 >
-                  <CategoryCard {...category} />
+                  <CategoryCard {...product} />
                 </CarouselItem>
               ))}
             </CarouselContent>

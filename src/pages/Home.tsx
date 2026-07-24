@@ -9,7 +9,7 @@ import { useSettings } from "@/hooks/settings.hook";
 
 export default function Home() {
 
-    const settings = useSettings();
+    const { settings } = useSettings();
     if (!settings) return null;
 
     return (

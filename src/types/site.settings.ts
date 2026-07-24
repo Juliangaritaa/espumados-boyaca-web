@@ -1,5 +1,5 @@
 export interface SiteSettings {
-    id: number;
+    id: string;
     company_name: string;
     hero_title: string;
     hero_description: string;

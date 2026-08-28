@@ -24,7 +24,7 @@ const links = [
   },
 ];
 
-export default function AdminSidebar() {
+export function AdminSidebar() {
 
   const navigate = useNavigate();
 

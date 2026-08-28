@@ -10,6 +10,11 @@ interface CategoryCardProps {
 }
 
 export function CategoryCard({ name, description, image_url, price, discount, variants }: CategoryCardProps) {
+  const hasDiscount = discount > 0;
+  
+  // Cálculo del precio final con descuento aplicado
+  const finalPrice = hasDiscount ? price * (1 - discount / 100) : price;
+
   return (
     <Card
       className="
@@ -70,12 +75,30 @@ export function CategoryCard({ name, description, image_url, price, discount, va
         </p>
 
         <div className="flex justify-between items-center p-4">
-          <p className="text-sm text-muted-foreground">
-            {price}
-          </p>
-          <p className="text-sm text-muted-foreground">
-            {discount}
-            %
+          <div className="flex items-center gap-2">
+            {/* Precio final (con o sin descuento) */}
+            <p
+              className={`text-sm ${
+                hasDiscount ? "text-red-600 font-bold" : "text-muted-foreground"
+              }`}
+            >
+              ${finalPrice.toLocaleString('es-CO')}
+            </p>
+
+            {/* Opcional: Mostrar precio original tachado si hay descuento */}
+            {hasDiscount && (
+              <span className="text-xs text-muted-foreground line-through">
+                ${price.toLocaleString('es-CO')}
+              </span>
+            )}
+          </div>
+
+          <p
+            className={`text-sm ${
+              hasDiscount ? "text-red-600 font-bold" : "text-muted-foreground"
+            }`}
+          >
+            {hasDiscount ? `-${discount}%` : `${discount}%`}
           </p>
         </div>
 

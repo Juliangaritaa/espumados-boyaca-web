@@ -8,20 +8,50 @@ import Products from "./admin/pages/Products";
 import Settings from "./admin/pages/Settings";
 
 import AdminLayout from "./admin/layouts/AdminLayout";
+import { ProtectedRoute } from "./admin/components/ProtectedRoute";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
 
-        <Route path="/admin/login" element={<Login />} />
+        {/* Landing Page */}
+        <Route
+          path="/"
+          element={<Home />}
+        />
 
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="products" element={<Products />} />
-          <Route path="settings" element={<Settings />} />
+        {/* Login */}
+        <Route
+          path="/admin/login"
+          element={<Login />}
+        />
+
+        {/* Rutas protegidas */}
+        <Route element={<ProtectedRoute />}>
+
+          <Route
+            path="/admin"
+            element={<AdminLayout />}
+          >
+            <Route
+              index
+              element={<Dashboard />}
+            />
+
+            <Route
+              path="products"
+              element={<Products />}
+            />
+
+            <Route
+              path="settings"
+              element={<Settings />}
+            />
+          </Route>
+
         </Route>
+
       </Routes>
     </BrowserRouter>
   );

@@ -1,7 +1,8 @@
 import { LayoutDashboard, Package, Settings, LogOut } from "lucide-react";
 
 import { NavLink } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import { supabase } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -24,6 +25,17 @@ const links = [
 ];
 
 export function AdminSidebar() {
+
+  const navigate = useNavigate();
+
+const handleLogout = async () => {
+  await supabase.auth.signOut();
+
+  navigate("/admin/login", {
+    replace: true,
+  });
+};
+
   return (
     <aside
       className="
@@ -67,7 +79,11 @@ export function AdminSidebar() {
       <div className="p-4">
         <Separator className="mb-4" />
 
-        <Button variant="outline" className="w-full justify-start">
+        <Button
+          variant="outline"
+          className="w-full justify-start"
+          onClick={handleLogout}
+        >
           <LogOut className="mr-2 h-4 w-4" />
           Cerrar sesión
         </Button>

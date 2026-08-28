@@ -1,4 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Tag } from "lucide-react";
 
 interface CategoryCardProps {
   name: string;
@@ -93,13 +95,14 @@ export function CategoryCard({ name, description, image_url, price, discount, va
             )}
           </div>
 
-          <p
-            className={`text-sm ${
+          <Badge
+            className={`variant=secondary bg-emerald-500/15 text-sm ${
               hasDiscount ? "text-red-600 font-bold" : "text-muted-foreground"
             }`}
           >
-            {hasDiscount ? `-${discount}%` : `${discount}%`}
-          </p>
+            <Tag className="mr-1 h-3 w-3" />
+            {hasDiscount ? `-${discount}% OFF` : `${discount}%`}
+          </Badge>
         </div>
 
         {variants && (

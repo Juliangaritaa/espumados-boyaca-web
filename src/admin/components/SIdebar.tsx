@@ -25,16 +25,15 @@ const links = [
 ];
 
 export function AdminSidebar() {
-
   const navigate = useNavigate();
 
-const handleLogout = async () => {
-  await supabase.auth.signOut();
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
 
-  navigate("/admin/login", {
-    replace: true,
-  });
-};
+    navigate("/admin/login", {
+      replace: true,
+    });
+  };
 
   return (
     <aside
